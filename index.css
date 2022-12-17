@@ -1,0 +1,118 @@
+:root {
+    --gradient1: hsl(6, 100%, 80%);
+    --gradient2: hsl(335, 100%, 65%);
+    --pblue: hsl(243, 100%, 93%);
+    --gblue: hsl(229, 7%, 55%);
+    --dblue: hsl(228, 56%, 26%);
+    --vdblue: hsl(229, 57%, 11%);
+    --fweight1: 400;
+    --fweight2: 700;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Raleway", Arial, sans-serif;
+    
+}
+body {
+    background-image: url("images/bg-mobile.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: calc(100vh - 30px);
+}
+
+.card1 {
+    height: 200px;
+    width: 80%;
+    background-color: var(--dblue);
+    border-radius: 10px 100px 10px 10px;
+    padding-inline: 50px;
+    padding-block: 20px;
+}
+.card2 {
+    height: 180px;
+    width: 80%;
+    border-radius: 10px;
+    background: var(--dblue);
+    margin: 20px;
+    padding-inline: 50px;
+    padding-block: 20px;
+}
+.bg {
+    background: var(--vdblue);
+    padding: 20px;
+    border-radius: 10px;
+    height: 60px;
+    margin-block-start: 50px;
+}
+.ico {
+
+}
+p {
+    color: var(--gblue);
+}
+span {
+    font-weight: var(--fweight2);
+    color: var(--pblue);
+}
+.progressbar {
+    height: 20px;
+    width: 100%;
+    background: var(--vdblue);
+    border-radius: 20px;
+    position: relative;
+}
+.progressbar::before {
+    content: "";
+    background-image: linear-gradient(to right, var(--gradient1), var(--gradient2));
+    border-radius: 20px;
+
+    position: absolute;
+    inset: 2px;
+    right: 25%;
+}
+.progressbar::after {
+    content: "";
+    background: var(--pblue);
+    
+    position: absolute;
+    inset: 4px;
+    width: 12px;
+    left: 70.2%;
+    border-radius: 50%;
+}
+.content {
+    position: absolute;
+    bottom: -45px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.span {
+    color: var(--pblue);
+    font-weight: var(--fweight2);
+}
+.sub {
+    background: var(--pblue);
+    width: 80%;
+    border-radius: 10px;
+    margin-block-start: 50px;
+    margin-inline: auto;
+    text-align: center;
+    padding: 0 0;
+
+}
+.new {
+    font-size: 50px;
+    color: var(--vdblue);
+
+}
+.real {
+    font-weight: var(--fweight2);
+}
