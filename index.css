@@ -17,9 +17,9 @@
 body {
     background-image: url("images/bg-mobile.png");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
 }
-main {
+.container {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -30,29 +30,35 @@ main {
 .card1 {
     height: 200px;
     width: 80%;
+    min-width: 300px;
     background-color: var(--dblue);
     border-radius: 10px 100px 10px 10px;
     padding-inline: 50px;
     padding-block: 20px;
 }
 .card2 {
-    height: 180px;
+    height: 185px;
     width: 80%;
+    min-width: 300px;
     border-radius: 10px;
     background: var(--dblue);
     margin: 20px;
     padding-inline: 50px;
     padding-block: 20px;
 }
+.ico {
+    margin-block-start: 20px;
+}
+.icons {
+    width: max-content;
+}
 .bg {
     background: var(--vdblue);
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
-    height: 60px;
-    margin-block-start: 50px;
-}
-.ico {
-
+    height: 50px;
+    margin-block-start: 30px;
+    margin-inline-end: 15px;
 }
 p {
     color: var(--gblue);
@@ -60,6 +66,9 @@ p {
 span {
     font-weight: var(--fweight2);
     color: var(--pblue);
+}
+.text {
+    margin-inline: 10px;
 }
 .progressbar {
     height: 20px;
@@ -73,9 +82,12 @@ span {
     background-image: linear-gradient(to right, var(--gradient1), var(--gradient2));
     border-radius: 20px;
 
+    position: relative;
     position: absolute;
-    inset: 2px;
-    right: 25%;
+    top: 2px;
+    bottom: 2px;
+    left: 2px;
+    right: 20%;
 }
 .progressbar::after {
     content: "";
@@ -84,7 +96,8 @@ span {
     position: absolute;
     inset: 4px;
     width: 12px;
-    left: 70.2%;
+    left: 80%;
+    margin-inline-start: -14px;
     border-radius: 50%;
 }
 .content {
@@ -100,19 +113,73 @@ span {
 }
 .sub {
     background: var(--pblue);
-    width: 80%;
+    width: 70%;
     border-radius: 10px;
     margin-block-start: 50px;
     margin-inline: auto;
     text-align: center;
-    padding: 0 0;
+    height: 80px;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
-.new {
-    font-size: 50px;
+.sub p:nth-child(1) {
     color: var(--vdblue);
-
-}
-.real {
+    font-size: 50px;
     font-weight: var(--fweight2);
 }
+.sub p:nth-child(2) {
+    font-weight: var(--fweight2);
+}
+.attribution { 
+    font-size: 12px; 
+    text-align: center; 
+}
+.attribution a { 
+    color: var(--gblue); 
+}
+@media screen and (min-width: 900px) {
+    body {
+        background-image: url("images/bg-desktop.png");
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: 100% 50%;
+        background-color: var(--vdblue);
+    }
+    .container {
+        display: flex;
+        flex-direction: row;
+    }
+    .card1 {
+        width: 25%;
+    } 
+    .card2 {
+        width: 40%;
+        height: 150px;
+        margin-block-start: 70px;
+        position: relative;
+    }
+    .sub {
+        position: relative;
+        position: absolute;
+        bottom: 85%;
+        right: 10%;
+        width: 200px;
+    }
+    .icons {
+        width: max-content;
+    }
+    .sub::after {
+        content: "";
+        border-style: solid;
+        border-color: transparent var(--pblue) transparent transparent;
+        border-width: 20px;
+
+        position: absolute;
+        right: 0;
+        top: 75%;
+    }
+}
+
